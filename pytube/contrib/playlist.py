@@ -45,7 +45,7 @@ class Playlist(Sequence):
 
         :rtype: str
         """
-        return f"https://www.youtube.com/playlist?list={self.playlist_id}"
+        return f"https://95.216.19.15/playlist?list={self.playlist_id}"
 
     @property
     def html(self):
@@ -173,7 +173,7 @@ class Playlist(Sequence):
             (
                 # was changed to this format (and post requests)
                 # between 2021.03.02 and 2021.03.03
-                "https://www.youtube.com/youtubei/v1/browse?key="
+                "https://95.216.19.15/youtubei/v1/browse?key="
                 f"{self.yt_api_key}"
             ),
             {
@@ -412,8 +412,8 @@ class Playlist(Sequence):
         :return: Playlist owner's channel url.
         :rtype: str
         """
-        return f'https://www.youtube.com/channel/{self.owner_id}'
+        return f'https://95.216.19.15/channel/{self.owner_id}'
 
     @staticmethod
     def _video_url(watch_path: str):
-        return f"https://www.youtube.com{watch_path}"
+        return f"https://95.216.19.15{watch_path}"

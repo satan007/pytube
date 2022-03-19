@@ -11,7 +11,7 @@ from pytube.exceptions import RegexMatchError
 def test_install_proxy(opener):
     proxies = {"http": "http://www.example.com:3128/"}
     YouTube(
-        "https://www.youtube.com/watch?v=9bZkp7q19f0",
+        "https://95.216.19.15/watch?v=9bZkp7q19f0",
         proxies=proxies,
     )
     opener.assert_called()
@@ -20,7 +20,7 @@ def test_install_proxy(opener):
 @mock.patch("pytube.request.get")
 def test_video_unavailable(get):
     get.return_value = ""
-    youtube = YouTube("https://www.youtube.com/watch?v=9bZkp7q19f0")
+    youtube = YouTube("https://95.216.19.15/watch?v=9bZkp7q19f0")
     with pytest.raises(RegexMatchError):
         youtube.check_availability()
 
@@ -57,4 +57,4 @@ def test_channel_id(cipher_signature):
 
 
 def test_channel_url(cipher_signature):
-    assert cipher_signature.channel_url == 'https://www.youtube.com/channel/UCBR8-60-B28hp2BmDPdntcQ'  # noqa:E501
+    assert cipher_signature.channel_url == 'https://95.216.19.15/channel/UCBR8-60-B28hp2BmDPdntcQ'  # noqa:E501

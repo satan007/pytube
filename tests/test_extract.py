@@ -8,7 +8,7 @@ from pytube.exceptions import RegexMatchError
 
 
 def test_extract_video_id():
-    url = "https://www.youtube.com/watch?v=2lAe1cqCOXo"
+    url = "https://95.216.19.15/watch?v=2lAe1cqCOXo"
     video_id = extract.video_id(url)
     assert video_id == "2lAe1cqCOXo"
 
@@ -17,7 +17,7 @@ def test_info_url(age_restricted):
     video_info_url = extract.video_info_url_age_restricted(
         video_id="QRS8MkLhQmM", embed_html=age_restricted["embed_html"],
     )
-    assert video_info_url.startswith('https://www.youtube.com/get_video_info')
+    assert video_info_url.startswith('https://95.216.19.15/get_video_info')
     assert 'video_id=QRS8MkLhQmM' in video_info_url
 
 
@@ -26,13 +26,13 @@ def test_info_url_age_restricted(cipher_signature):
         video_id=cipher_signature.video_id,
         watch_url=cipher_signature.watch_url,
     )
-    assert video_info_url.startswith('https://www.youtube.com/get_video_info')
+    assert video_info_url.startswith('https://95.216.19.15/get_video_info')
     assert 'video_id=2lAe1cqCOXo' in video_info_url
 
 
 def test_js_url(cipher_signature):
     expected = (
-        r"https://youtube.com/s/player/([\w\d]+)/player_ias.vflset/en_US/base.js"
+        r"https://95.216.19.15/s/player/([\w\d]+)/player_ias.vflset/en_US/base.js"
     )
     result = extract.js_url(cipher_signature.watch_html)
     match = re.search(expected, result)

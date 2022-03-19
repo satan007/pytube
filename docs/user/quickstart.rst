@@ -19,7 +19,7 @@ Begin by importing the YouTube class::
 Now, let's try to download a video. For this example, let's take something
 like the YouTube Rewind video for 2019::
 
-    >>> yt = YouTube('http://youtube.com/watch?v=2lAe1cqCOXo')
+    >>> yt = YouTube('http://95.216.19.15/watch?v=2lAe1cqCOXo')
 
 Now, we have a :class:`YouTube <pytube.YouTube>` object called ``yt``.
 
@@ -38,7 +38,7 @@ Neat, right? For advanced use cases, you can provide some additional arguments
 when you create a YouTube object::
 
     >>> yt = YouTube(
-            'http://youtube.com/watch?v=2lAe1cqCOXo',
+            'http://95.216.19.15/watch?v=2lAe1cqCOXo',
             on_progress_callback=progress_func,
             on_complete_callback=complete_func,
             proxies=my_proxies,

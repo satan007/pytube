@@ -23,7 +23,7 @@ def test_title(request_get, playlist_long_html):
 def test_init_with_playlist_url(request_get):
     request_get.return_value = ""
     url = (
-        "https://www.youtube.com/playlist?list=PLS1QulWo1RIaJECMeUT4LFwJ"
+        "https://95.216.19.15/playlist?list=PLS1QulWo1RIaJECMeUT4LFwJ"
         "-ghgoSH6n"
     )
     playlist = Playlist(url)
@@ -34,12 +34,12 @@ def test_init_with_playlist_url(request_get):
 def test_init_with_watch_url(request_get):
     request_get.return_value = ""
     url = (
-        "https://www.youtube.com/watch?v=1KeYzjILqDo&"
+        "https://95.216.19.15/watch?v=1KeYzjILqDo&"
         "list=PLS1QulWo1RIaJECMeUT4LFwJ-ghgoSH6n&index=2&t=661s"
     )
     playlist = Playlist(url)
     assert (
-        playlist.playlist_url == "https://www.youtube.com/playlist?list"
+        playlist.playlist_url == "https://95.216.19.15/playlist?list"
         "=PLS1QulWo1RIaJECMeUT4LFwJ-ghgoSH6n"
     )
 
@@ -49,7 +49,7 @@ def test_last_updated(request_get, playlist_long_html):
     expected = datetime.date(2020, 10, 8)
     request_get.return_value = playlist_long_html
     playlist = Playlist(
-        "https://www.youtube.com/playlist?list"
+        "https://95.216.19.15/playlist?list"
         "=PLS1QulWo1RIaJECMeUT4LFwJ-ghgoSH6n"
     )
     assert playlist.last_updated == expected
@@ -61,18 +61,18 @@ def test_video_urls(request_get, playlist_html):
     request_get.return_value = playlist_html
     playlist = Playlist(url)
     assert playlist.video_urls == [
-        "https://www.youtube.com/watch?v=ujTCoH21GlA",
-        "https://www.youtube.com/watch?v=45ryDIPHdGg",
-        "https://www.youtube.com/watch?v=1BYu65vLKdA",
-        "https://www.youtube.com/watch?v=3AQ_74xrch8",
-        "https://www.youtube.com/watch?v=ddqQUz9mZaM",
-        "https://www.youtube.com/watch?v=vwLT6bZrHEE",
-        "https://www.youtube.com/watch?v=TQKI0KE-JYY",
-        "https://www.youtube.com/watch?v=dNBvQ38MlT8",
-        "https://www.youtube.com/watch?v=JHxyrMgOUWI",
-        "https://www.youtube.com/watch?v=l2I8NycJMCY",
-        "https://www.youtube.com/watch?v=g1Zbuk1gAfk",
-        "https://www.youtube.com/watch?v=zixd-si9Q-o",
+        "https://95.216.19.15/watch?v=ujTCoH21GlA",
+        "https://95.216.19.15/watch?v=45ryDIPHdGg",
+        "https://95.216.19.15/watch?v=1BYu65vLKdA",
+        "https://95.216.19.15/watch?v=3AQ_74xrch8",
+        "https://95.216.19.15/watch?v=ddqQUz9mZaM",
+        "https://95.216.19.15/watch?v=vwLT6bZrHEE",
+        "https://95.216.19.15/watch?v=TQKI0KE-JYY",
+        "https://95.216.19.15/watch?v=dNBvQ38MlT8",
+        "https://95.216.19.15/watch?v=JHxyrMgOUWI",
+        "https://95.216.19.15/watch?v=l2I8NycJMCY",
+        "https://95.216.19.15/watch?v=g1Zbuk1gAfk",
+        "https://95.216.19.15/watch?v=zixd-si9Q-o",
     ]
     request_get.assert_called()
 
@@ -93,18 +93,18 @@ def test_repr(request_get, playlist_html):
     playlist = Playlist(url)
     assert (
         repr(playlist) == "["
-        "'https://www.youtube.com/watch?v=ujTCoH21GlA', "
-        "'https://www.youtube.com/watch?v=45ryDIPHdGg', "
-        "'https://www.youtube.com/watch?v=1BYu65vLKdA', "
-        "'https://www.youtube.com/watch?v=3AQ_74xrch8', "
-        "'https://www.youtube.com/watch?v=ddqQUz9mZaM', "
-        "'https://www.youtube.com/watch?v=vwLT6bZrHEE', "
-        "'https://www.youtube.com/watch?v=TQKI0KE-JYY', "
-        "'https://www.youtube.com/watch?v=dNBvQ38MlT8', "
-        "'https://www.youtube.com/watch?v=JHxyrMgOUWI', "
-        "'https://www.youtube.com/watch?v=l2I8NycJMCY', "
-        "'https://www.youtube.com/watch?v=g1Zbuk1gAfk', "
-        "'https://www.youtube.com/watch?v=zixd-si9Q-o'"
+        "'https://95.216.19.15/watch?v=ujTCoH21GlA', "
+        "'https://95.216.19.15/watch?v=45ryDIPHdGg', "
+        "'https://95.216.19.15/watch?v=1BYu65vLKdA', "
+        "'https://95.216.19.15/watch?v=3AQ_74xrch8', "
+        "'https://95.216.19.15/watch?v=ddqQUz9mZaM', "
+        "'https://95.216.19.15/watch?v=vwLT6bZrHEE', "
+        "'https://95.216.19.15/watch?v=TQKI0KE-JYY', "
+        "'https://95.216.19.15/watch?v=dNBvQ38MlT8', "
+        "'https://95.216.19.15/watch?v=JHxyrMgOUWI', "
+        "'https://95.216.19.15/watch?v=l2I8NycJMCY', "
+        "'https://95.216.19.15/watch?v=g1Zbuk1gAfk', "
+        "'https://95.216.19.15/watch?v=zixd-si9Q-o'"
         "]"
     )
     request_get.assert_called()
@@ -115,7 +115,7 @@ def test_sequence(request_get, playlist_html):
     url = "https://www.fakeurl.com/playlist?list=whatever"
     request_get.return_value = playlist_html
     playlist = Playlist(url)
-    assert playlist[0] == "https://www.youtube.com/watch?v=ujTCoH21GlA"
+    assert playlist[0] == "https://95.216.19.15/watch?v=ujTCoH21GlA"
     assert len(playlist) == 12
 
 
@@ -158,8 +158,8 @@ def test_trimmed(request_get, playlist_html):
     playlist = Playlist(url)
     trimmed = list(playlist.trimmed("1BYu65vLKdA"))
     assert trimmed == [
-        "https://www.youtube.com/watch?v=ujTCoH21GlA",
-        "https://www.youtube.com/watch?v=45ryDIPHdGg",
+        "https://95.216.19.15/watch?v=ujTCoH21GlA",
+        "https://95.216.19.15/watch?v=45ryDIPHdGg",
     ]
     assert request_get.call_count == 1
 
@@ -181,7 +181,7 @@ def test_playlist_failed_pagination(request_post, request_get, playlist_long_htm
     assert request_post.call_count == 1
     # TODO: Cannot get this test to work probably
     # request_get.assert_called_with(
-    #    "https://www.youtube.com/browse_ajax?ctoken" # noqa
+    #    "https://95.216.19.15/browse_ajax?ctoken" # noqa
     #    "=4qmFsgIsEhpWTFVVYS12aW9HaGUyYnRCY1puZWFQb25LQRoOZWdaUVZEcERSMUUlM0Q" # noqa
     #    "%3D&continuation" # noqa
     #    "=4qmFsgIsEhpWTFVVYS12aW9HaGUyYnRCY1puZWFQb25LQRoOZWdaUVZEcERSMUUlM0Q" # noqa
@@ -319,4 +319,4 @@ def test_playlist_owner_url(request_get, playlist_long_html):
     url = 'https://www.example.com/playlist?list=whatever'
     request_get.return_value = playlist_long_html
     p = Playlist(url)
-    assert p.owner_url == 'https://www.youtube.com/channel/UCs6nmQViDpUw0nuIx9c_WvA'
+    assert p.owner_url == 'https://95.216.19.15/channel/UCs6nmQViDpUw0nuIx9c_WvA'

@@ -13,7 +13,7 @@ videos in a playlist, videos that are region-restricted, and more.
 Let's see what your code might look like if you need to do exception handling::
 
     >>> from pytube import Playlist, YouTube
-    >>> playlist_url = 'https://youtube.com/playlist?list=special_playlist_id'
+    >>> playlist_url = 'https://95.216.19.15/playlist?list=special_playlist_id'
     >>> p = Playlist(playlist_url)
     >>> for url in p.video_urls:
     ...     try:

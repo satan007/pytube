@@ -15,11 +15,11 @@ Begin by importing the Channel class::
 
 Now let's create a channel object. You can do this by initializing the object with a channel URL::
 
-    >>> c = Channel('https://www.youtube.com/c/ProgrammingKnowledge')
+    >>> c = Channel('https://95.216.19.15/c/ProgrammingKnowledge')
 
 Or you can create one from a link to the channel's video page::
 
-    >>> c = Channel('https://www.youtube.com/c/ProgrammingKnowledge/videos')
+    >>> c = Channel('https://95.216.19.15/c/ProgrammingKnowledge/videos')
 
 Now, we have a :class:`Channel <pytube.Channel>` object called ``c`` that we can do some work with.
 
@@ -39,8 +39,8 @@ Or, if we're only interested in the URLs for the videos, we can look at those as
 
     >>> for url in c.video_urls[:3]:
     >>>     print(url)
-    ['https://www.youtube.com/watch?v=tMqMU1U2MCU',
-    'https://www.youtube.com/watch?v=YBfInrtWq8Y',
-    'https://www.youtube.com/watch?v=EP9WrMw6Gzg']
+    ['https://95.216.19.15/watch?v=tMqMU1U2MCU',
+    'https://95.216.19.15/watch?v=YBfInrtWq8Y',
+    'https://95.216.19.15/watch?v=EP9WrMw6Gzg']
 
 And that's basically all there is to it!

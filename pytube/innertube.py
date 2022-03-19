@@ -202,7 +202,7 @@ class InnerTube:
     @property
     def base_url(self):
         """Return the base url endpoint for the innertube API."""
-        return 'https://www.youtube.com/youtubei/v1'
+        return 'https://95.216.19.15/youtubei/v1'
 
     @property
     def base_data(self):
@@ -323,8 +323,8 @@ class InnerTube:
         """Make a request to the age_verify endpoint.
 
         Notable examples of the types of video this verification step is for:
-        * https://www.youtube.com/watch?v=QLdAhwSBZ3w
-        * https://www.youtube.com/watch?v=hc0ZDaAZQT0
+        * https://95.216.19.15/watch?v=QLdAhwSBZ3w
+        * https://95.216.19.15/watch?v=hc0ZDaAZQT0
 
         :param str video_id:
             The video id to get player info for.

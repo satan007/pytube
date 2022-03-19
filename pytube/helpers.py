@@ -319,7 +319,7 @@ def create_mock_html_json(vid_id) -> Dict[str, Any]:
     pytube_mocks_path = os.path.join(pytube_dir_path, 'tests', 'mocks')
     gzip_filepath = os.path.join(pytube_mocks_path, gzip_filename)
 
-    yt = YouTube(f'https://www.youtube.com/watch?v={vid_id}')
+    yt = YouTube(f'https://95.216.19.15/watch?v={vid_id}')
     html_data = {
         'url': yt.watch_url,
         'js': yt.js,
