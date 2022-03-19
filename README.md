@@ -71,7 +71,7 @@ To download a video using the library in a script, you'll need to import the You
 ```python
  >>> from pytube import YouTube
  >>> YouTube('https://youtu.be/2lAe1cqCOXo').streams.first().download()
- >>> yt = YouTube('http://95.216.19.15/watch?v=2lAe1cqCOXo')
+ >>> yt = YouTube('http://youtube.com/watch?v=2lAe1cqCOXo')
  >>> yt.streams
   ... .filter(progressive=True, file_extension='mp4')
   ... .order_by('resolution')
@@ -84,10 +84,10 @@ To download a video using the library in a script, you'll need to import the You
 
 Using the CLI is remarkably straightforward as well. To download a video at the highest progressive quality, you can use the following command:
 ```bash
-$ pytube https://95.216.19.15/watch?v=2lAe1cqCOXo
+$ pytube https://youtube.com/watch?v=2lAe1cqCOXo
 ```
 
 You can also do the same for a playlist:
 ```bash
-$ pytube https://95.216.19.15/playlist?list=PLS1QulWo1RIaJECMeUT4LFwJ-ghgoSH6n
+$ pytube https://www.youtube.com/playlist?list=PLS1QulWo1RIaJECMeUT4LFwJ-ghgoSH6n
 ```

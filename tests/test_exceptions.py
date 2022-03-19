@@ -73,7 +73,7 @@ def test_raises_video_private(private):
         ]
         mock_url_open.return_value = mock_url_open_object
         with pytest.raises(exceptions.VideoPrivate):
-            YouTube('https://95.216.19.15/watch?v=m8uHb5jIGN8').streams
+            YouTube('https://youtube.com/watch?v=m8uHb5jIGN8').streams
 
 
 def test_raises_recording_unavailable(missing_recording):
@@ -85,4 +85,4 @@ def test_raises_recording_unavailable(missing_recording):
         ]
         mock_url_open.return_value = mock_url_open_object
         with pytest.raises(exceptions.RecordingUnavailable):
-            YouTube('https://95.216.19.15/watch?v=5YceQ8YqYMc').streams
+            YouTube('https://youtube.com/watch?v=5YceQ8YqYMc').streams

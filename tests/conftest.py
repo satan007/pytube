@@ -82,7 +82,7 @@ def missing_recording():
 @pytest.fixture
 def playlist_html():
     """Youtube playlist HTML loaded on 2020-01-25 from
-    https://95.216.19.15/playlist?list=PLzMcBGfZo4-mP7qA9cagf68V06sko5otr
+    https://www.youtube.com/playlist?list=PLzMcBGfZo4-mP7qA9cagf68V06sko5otr
     """
     file_path = os.path.join(
         os.path.dirname(os.path.realpath(__file__)),
@@ -96,7 +96,7 @@ def playlist_html():
 @pytest.fixture
 def playlist_long_html():
     """Youtube playlist HTML loaded on 2020-01-25 from
-    https://95.216.19.15/playlist?list=PLzMcBGfZo4-mP7qA9cagf68V06sko5otr
+    https://www.youtube.com/playlist?list=PLzMcBGfZo4-mP7qA9cagf68V06sko5otr
     """
     file_path = os.path.join(
         os.path.dirname(os.path.realpath(__file__)),
@@ -110,7 +110,7 @@ def playlist_long_html():
 @pytest.fixture
 def playlist_submenu_html():
     """Youtube playlist HTML loaded on 2020-01-24 from
-    https://95.216.19.15/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr
+    https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr
     """
     file_path = os.path.join(
         os.path.dirname(os.path.realpath(__file__)),
@@ -137,7 +137,7 @@ def stream_dict():
 @pytest.fixture
 def channel_videos_html():
     """Youtube channel HTML loaded on 2021-05-05 from
-    https://95.216.19.15/c/ProgrammingKnowledge/videos
+    https://www.youtube.com/c/ProgrammingKnowledge/videos
     """
     file_path = os.path.join(
         os.path.dirname(os.path.realpath(__file__)),
@@ -151,7 +151,7 @@ def channel_videos_html():
 @pytest.fixture
 def base_js():
     """Youtube base.js retrieved on 2022-02-04 from
-    https://95.216.19.15/watch?v=vmzxpUsN0uA
+    https://www.youtube.com/watch?v=vmzxpUsN0uA
     """
     file_path = os.path.join(
         os.path.dirname(os.path.realpath(__file__)),

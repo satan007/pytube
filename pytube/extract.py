@@ -120,8 +120,8 @@ def video_id(url: str) -> str:
 
     This function supports the following patterns:
 
-    - :samp:`https://95.216.19.15/watch?v={video_id}`
-    - :samp:`https://95.216.19.15/embed/{video_id}`
+    - :samp:`https://youtube.com/watch?v={video_id}`
+    - :samp:`https://youtube.com/embed/{video_id}`
     - :samp:`https://youtu.be/{video_id}`
 
     :param str url:
@@ -138,8 +138,8 @@ def playlist_id(url: str) -> str:
 
     This function supports the following patterns:
 
-    - :samp:`https://95.216.19.15/playlist?list={playlist_id}`
-    - :samp:`https://95.216.19.15/watch?v={video_id}&list={playlist_id}`
+    - :samp:`https://youtube.com/playlist?list={playlist_id}`
+    - :samp:`https://youtube.com/watch?v={video_id}&list={playlist_id}`
 
     :param str url:
         A YouTube url containing a playlist id.
@@ -156,10 +156,10 @@ def channel_name(url: str) -> str:
 
     This function supports the following patterns:
 
-    - :samp:`https://95.216.19.15/c/{channel_name}/*`
-    - :samp:`https://95.216.19.15/channel/{channel_id}/*
-    - :samp:`https://95.216.19.15/u/{channel_name}/*`
-    - :samp:`https://95.216.19.15/user/{channel_id}/*
+    - :samp:`https://youtube.com/c/{channel_name}/*`
+    - :samp:`https://youtube.com/channel/{channel_id}/*
+    - :samp:`https://youtube.com/u/{channel_name}/*`
+    - :samp:`https://youtube.com/user/{channel_id}/*
 
     :param str url:
         A YouTube url containing a channel name.
@@ -196,7 +196,7 @@ def video_info_url(video_id: str, watch_url: str) -> str:
         A YouTube watch url.
     :rtype: str
     :returns:
-        :samp:`https://95.216.19.15/get_video_info` with necessary GET
+        :samp:`https://youtube.com/get_video_info` with necessary GET
         parameters.
     """
     params = OrderedDict(
@@ -222,7 +222,7 @@ def video_info_url_age_restricted(video_id: str, embed_html: str) -> str:
         The html contents of the embed page (for age restricted videos).
     :rtype: str
     :returns:
-        :samp:`https://95.216.19.15/get_video_info` with necessary GET
+        :samp:`https://youtube.com/get_video_info` with necessary GET
         parameters.
     """
     try:
@@ -246,7 +246,7 @@ def video_info_url_age_restricted(video_id: str, embed_html: str) -> str:
 
 
 def _video_info_url(params: OrderedDict) -> str:
-    return "https://95.216.19.15/get_video_info?" + urlencode(params)
+    return "https://www.youtube.com/get_video_info?" + urlencode(params)
 
 
 def js_url(html: str) -> str:
@@ -262,7 +262,7 @@ def js_url(html: str) -> str:
         base_js = get_ytplayer_config(html)['assets']['js']
     except (KeyError, RegexMatchError):
         base_js = get_ytplayer_js(html)
-    return "https://95.216.19.15" + base_js
+    return "https://youtube.com" + base_js
 
 
 def mime_type_codec(mime_type_codec: str) -> Tuple[str, List[str]]:
