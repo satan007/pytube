@@ -4,6 +4,7 @@ import json
 import logging
 import re
 import socket
+from fake_useragent import UserAgent
 from functools import lru_cache
 from urllib import parse
 from urllib.error import URLError
@@ -12,6 +13,7 @@ from urllib.request import Request, urlopen
 from pytube.exceptions import RegexMatchError, MaxRetriesExceeded
 from pytube.helpers import regex_search
 
+ua = UserAgent()
 logger = logging.getLogger(__name__)
 default_range_size = 9437184  # 9MB
 
@@ -23,7 +25,7 @@ def _execute_request(
     data=None,
     timeout=socket._GLOBAL_DEFAULT_TIMEOUT
 ):
-    base_headers = {"User-Agent": "Mozilla/5.0", "accept-language": "en-US,en"}
+    base_headers = {"User-Agent": ua.random, "accept-language": "en-US,en"}
     if headers:
         base_headers.update(headers)
     if data:
